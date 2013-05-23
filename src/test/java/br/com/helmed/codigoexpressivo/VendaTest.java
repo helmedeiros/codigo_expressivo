@@ -5,22 +5,22 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Unit test for {@link B}.
+ * Unit test for {@link Venda}.
  * User: helmed
  * Date: 5/23/13
  * Time: 5:17 PM
  */
-public class BTest {
+public class VendaTest {
     @Test public void testDeveAplicarDescontoSeSexoCompradorMasculino() throws Exception {
-        final B vendaParaUmHomem = new B(15, 100);
+        final Venda vendaParaUmHomem = new Venda(15, 100);
         final double expected = 85;
-        assertEquals("Valor final não sofreu 15% de desconto",expected,vendaParaUmHomem.d(),0);
+        assertEquals("Valor final não sofreu 15% de desconto",expected,vendaParaUmHomem.vender(),0);
     }
 
     @Test
     public void testNaoDeveAplicarQualquerDescontoQuandoNaoCairEmPromocoes() throws Exception {
-        final B vendaSemPromocao = new B(999,100);
-        assertEquals("Valor final não deveria ter descontos", 100, vendaSemPromocao.d(), 0);
+        final Venda vendaSemPromocao = new Venda(999,100);
+        assertEquals("Valor final não deveria ter descontos", 100, vendaSemPromocao.vender(), 0);
 
     }
 }
