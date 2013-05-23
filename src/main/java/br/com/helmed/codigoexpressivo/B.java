@@ -1,3 +1,4 @@
+package br.com.helmed.codigoexpressivo;
 /**
  * User: helmed
  * Date: 5/23/13
@@ -14,7 +15,7 @@ public class B extends A {
 
     @Override
     public double d() {
-        if(this.z==15) return this.x + this.x * 0.15;
+        if(this.z==15) return this.x - this.x * 0.15;
         else return this.x;
     }
 }
