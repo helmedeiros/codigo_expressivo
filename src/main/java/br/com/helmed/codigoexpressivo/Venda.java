@@ -18,7 +18,20 @@ public class Venda extends VendaAbstrata {
 
     @Override
     public double vender() {
-        if(this.sexoComprador == MASCULINO) return this.valorDaCompra - this.valorDaCompra * 0.15;
-        else return this.valorDaCompra;
+        return aplicarDescontosSobreValorDaCompra();
+    }
+
+    private double aplicarDescontosSobreValorDaCompra() {
+        double valorComDesconto = this.valorDaCompra;
+
+        if(this.sexoComprador == MASCULINO) {
+            valorComDesconto = descontarPorcentagem(15, valorComDesconto);
+        }
+
+        return valorComDesconto;
+    }
+
+    private double descontarPorcentagem(double porcentagem, double valorOriginalDaCompra) {
+        return valorOriginalDaCompra - (valorOriginalDaCompra * (porcentagem/100));
     }
 }
