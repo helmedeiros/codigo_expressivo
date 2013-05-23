@@ -17,7 +17,6 @@ public class Venda extends VendaAbstrata {
         this.valorDaCompra = valorDaCompra;
     }
 
-    @Override
     public double vender() {
         return aplicarDescontosSobreValorDaCompra();
     }
