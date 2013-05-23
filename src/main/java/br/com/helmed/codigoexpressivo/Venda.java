@@ -7,6 +7,7 @@ package br.com.helmed.codigoexpressivo;
 public class Venda extends VendaAbstrata {
     public static final int MASCULINO = 15;
     public static final int NAO_INFORMADO = -1;
+    private static final int FEMININO = 22;
 
     private int sexoComprador = NAO_INFORMADO;
     private double valorDaCompra = -1;
@@ -26,6 +27,8 @@ public class Venda extends VendaAbstrata {
 
         if(this.sexoComprador == MASCULINO) {
             valorComDesconto = descontarPorcentagem(15, valorComDesconto);
+        } else if (this.sexoComprador == FEMININO && valorComDesconto > 1000){
+            valorComDesconto = descontarPorcentagem(10, valorComDesconto);
         }
 
         return valorComDesconto;
