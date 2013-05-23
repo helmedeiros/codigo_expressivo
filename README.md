@@ -1,4 +1,4 @@
-codigo_expressivo
+Código Expressivo? Onde? 
 =================
 
 Revisitando alguns post do blog do Phil Calcado, achei esta pérola sobre expressividade de código. 
