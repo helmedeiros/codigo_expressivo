@@ -25,6 +25,9 @@
         <module name="codigo_expressivo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="codigo_expressivo" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 
