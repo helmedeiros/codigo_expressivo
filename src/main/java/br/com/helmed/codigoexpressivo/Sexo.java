@@ -21,10 +21,11 @@ public enum Sexo {
     }
 
     public static Sexo peloCodigo(final int codigo){
-        for (Sexo sexo : Sexo.values()) {
-           if(sexo.getCodigo() == codigo) return sexo;
-        }
+        Sexo sexo = NAO_INFORMADO;
 
-        return null;
+        if(MASCULINO.getCodigo() == codigo) sexo = MASCULINO;
+        else if(FEMININO.getCodigo() == codigo) sexo = FEMININO;
+
+        return sexo;
     }
 }
