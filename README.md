@@ -1,4 +1,4 @@
-Código Expressivo? Onde? 
+Código Expressivo? Onde? [![Build Status](https://travis-ci.org/helmedeiros/codigo_expressivo.png?branch=master)](https://travis-ci.org/helmedeiros/codigo_expressivo)
 =================
 
 Revisitando alguns post do blog do Phil Calcado [@pcalcado](https://twitter.com/pcalcado), achei esta pérola sobre expressividade de código. 
