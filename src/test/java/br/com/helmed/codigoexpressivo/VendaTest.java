@@ -18,17 +18,18 @@ public class VendaTest {
     public static final int VALOR_DA_COMPRA_QUALQUER = 100;
     public static final int VALOR_COMPRA_ABAIXO_DE_MIL = 900;
     public static final int VALOR_COMPRA_IGUAL_A_MIL = 1000;
+    public static final int DELTA_ACEITAVEL = 0;
 
     @Test public void testDeveAplicarDescontoSeSexoCompradorMasculino() throws Exception {
         final Venda vendaParaUmHomem = new Venda(MASCULINO, 100);
         final double expected = 85;
-        assertEquals("Valor final não sofreu 15% de desconto",expected,vendaParaUmHomem.vender(),0);
+        assertEquals("Valor final não sofreu 15% de desconto",expected,vendaParaUmHomem.vender(), DELTA_ACEITAVEL);
     }
 
     @Test public void testDeveAplicarDescontoSeSexoFemininoECompraMAiorQueMil() throws Exception {
         Venda vendaParaMulherAcimaDeMil = new Venda(FEMININO, 1001);
         double valorFinalEsperado = 900.9;
-        assertEquals("Valor final não sofreu 10% de desconto",valorFinalEsperado,vendaParaMulherAcimaDeMil.vender(),0);
+        assertEquals("Valor final não sofreu 10% de desconto",valorFinalEsperado,vendaParaMulherAcimaDeMil.vender(), DELTA_ACEITAVEL);
     }
 
     @Test
@@ -40,6 +41,6 @@ public class VendaTest {
 
     private void verificaSeValorDaCompraNaoFoiAfetado(int sexoComprador, int valorDaCompra) {
         final Venda vendaSemPromocao = new Venda(sexoComprador, valorDaCompra);
-        assertEquals("Valor final não deveria ter descontos", valorDaCompra, vendaSemPromocao.vender(), 0);
+        assertEquals("Valor final não deveria ter descontos", valorDaCompra, vendaSemPromocao.vender(), DELTA_ACEITAVEL);
     }
 }
