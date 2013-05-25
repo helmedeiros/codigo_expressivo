@@ -1,4 +1,5 @@
 package br.com.helmed.codigoexpressivo;
+
 /**
  * User: helmed
  * Date: 5/23/13
@@ -9,8 +10,8 @@ public class Venda extends VendaAbstrata {
     private Sexo sexoComprador = Sexo.NAO_INFORMADO;
     private double valorDaCompra = -1;
 
-    public Venda(int sexoComprador, double valorDaCompra) {
-        this.sexoComprador = Sexo.peloCodigo(sexoComprador);
+    public Venda(final Cliente cliente, final double valorDaCompra) {
+        this.sexoComprador = cliente.getSexo();
         this.valorDaCompra = valorDaCompra;
     }
 
@@ -21,9 +22,9 @@ public class Venda extends VendaAbstrata {
     private double aplicarDescontosSobreValorDaCompra() {
         double valorComDesconto = this.valorDaCompra;
 
-        if(this.sexoComprador == Sexo.MASCULINO) {
+        if(Sexo.MASCULINO.equals(this.sexoComprador)) {
             valorComDesconto = descontarPorcentagem(15, valorComDesconto);
-        } else if (this.sexoComprador == Sexo.FEMININO && valorComDesconto > 1000){
+        } else if (Sexo.FEMININO.equals(this.sexoComprador) && valorComDesconto > 1000){
             valorComDesconto = descontarPorcentagem(10, valorComDesconto);
         }
 

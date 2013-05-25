@@ -16,7 +16,7 @@ public enum Sexo {
         this.codigo = codigo;
     }
 
-    public int getCodigo() {
+    protected int getCodigo() {
         return codigo;
     }
 
