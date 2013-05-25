@@ -10,13 +10,9 @@ public class Cliente {
     private final String cpf;
 
     public Cliente (final String cpf, final int sexo){
-        if("".equals(cpf)) throw new IllegalArgumentException("Nome deve ser preenchido");
+        if(cpf == null || cpf.isEmpty()) throw new IllegalArgumentException("Nome deve ser preenchido");
         this.sexo = Sexo.peloCodigo(sexo);
         this.cpf = cpf;
-    }
-
-    public Cliente(final int sexo) {
-        this("",sexo);
     }
 
     public Sexo getSexo() {

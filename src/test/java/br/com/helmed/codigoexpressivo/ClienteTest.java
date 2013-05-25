@@ -16,8 +16,13 @@ public class ClienteTest {
     public static final int CODIGO_QUALQUER_SEXO = QUALQUER_SEXO.getCodigo();
 
     @Test(expected = IllegalArgumentException.class)
-    public void naoDeveCadastrarClientesSemCpf() throws Exception {
-        new Cliente(CODIGO_QUALQUER_SEXO);
+    public void naoDeveCadastrarClientesComCpfEmBranco() throws Exception {
+        new Cliente("", CODIGO_QUALQUER_SEXO);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void naoDeveCadastrarClientesComCpfNulos() throws Exception {
+        new Cliente(null, CODIGO_QUALQUER_SEXO);
     }
 
     @Test public void deveRetornarCpfDoCliente() throws Exception {
