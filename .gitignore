@@ -57,4 +57,4 @@ local.properties
 .buildpath
 
 ### Maven ###
-target/
+target/.idea
